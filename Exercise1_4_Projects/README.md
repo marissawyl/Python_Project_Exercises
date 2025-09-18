@@ -157,3 +157,56 @@ plt.show()
 - The skills with the highest salaries for Data Analysts are mostly specialized or niche technologies such as dplyr, Bitbucket, GitLab, Solidity, and Hugging Face. This suggests that analysts who combine core analytical abilities with expertise in modern tools or programming frameworks can command significantly higher pay.
 - In contrast, the most in-demand skills are more traditional and widely used, such as Python, Tableau, SQL, R, and Excel. These reflect the essential toolkit for most analyst roles, emphasizing versatility and practical application over specialization.
 - The comparison highlights a clear gap between what is most valued in the job market and what is most common in everyday analyst work. While core skills drive employability, niche technical expertise offers a path to higher earning potential.
+
+## 4. What are the most optimal skills to learn for Data Analysts?
+
+To determine which skills provide the greatest value for career growth, I analyzed both their demand in job postings and their median salaries. This made it easier to highlight the skills that offer the best balance of demand and compensation.
+
+View my notebook with detailed steps here: [4_Optimal_Skills.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise1_4_Projects/4_Optimal_Skills.ipynb)
+
+### Visualize Data
+
+```python
+sns.set_theme(style='ticks')
+
+sns.scatterplot(data=df_plot, x='skill_percent', y='median_salary', hue='technology')
+sns.despine()
+
+plt.title('Most Optimal Skills for Data Analysts in the US', fontsize=15)
+plt.xlabel('Percent of Data Analyst Jobs')
+plt.ylabel('Median Yearly Salary')
+plt.legend(title='Technology')
+
+ax=plt.gca()
+ax.xaxis.set_major_formatter(PercentFormatter())
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K'))
+
+# Create a variable list for adjust_text()
+texts = []
+
+for i, txt in enumerate(df_plot.index):
+    x = df_plot['skill_percent'].iloc[i]
+    y = df_plot['median_salary'].iloc[i]
+    texts.append(plt.text(x, y + 200, txt))
+
+adjust_text(texts, arrowprops=dict(arrowstyle='->', color='grey', lw=1)) # lw= line width
+
+# Manually adjusted the position of the SAS and Power BI labels to resolve overlap
+for t in texts:
+    if t.get_text() == "sas":
+        t.set_position((t.get_position()[0]+1, t.get_position()[1]+500))
+    if t.get_text() == "power bi":
+        t.set_position((t.get_position()[0]-1, t.get_position()[1]-1500))
+
+plt.show()
+```
+
+### Results
+
+![Optimal_Skills](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise1_4_Projects/images/Optimal_Skills.png)
+
+### Insights
+
+- Python and SQL stand out as the most optimal skills for Data Analysts, combining high salaries with strong demand across job postings. This shows their importance as core skills that provide both career stability and competitive pay.
+- Tools like Tableau and R also offer a good balance between demand and salary, making them valuable additions to a data analyst’s toolkit, especially for visualization and statistical analysis.
+- On the other hand, skills such as Word and PowerPoint appear frequently in job postings but are associated with lower salaries, indicating that while they are useful, they do not provide the same level of career leverage as technical or programming skills.
