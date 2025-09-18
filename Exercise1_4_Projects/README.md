@@ -29,6 +29,7 @@ fig.suptitle('Likelihood of Skills Requested in US Job Postings', fontsize=15)
 fig.tight_layout()
 plt.show()
 ```
+
 ### Results
 
 ![Skill_Count](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise1_4_Projects/images/Skills_Count.png)
@@ -76,6 +77,7 @@ plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
 
 plt.show()
 ```
+
 ### Results
 
 ![Skill_Trend](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise1_4_Projects/images/Skills_Trend.png)
@@ -85,3 +87,39 @@ plt.show()
 - SQL consistently remained the most in-demand skill for Data Analysts throughout 2023, though it showed a slight downward trend over the year. This highlights how SQL continues to be the core technical requirement for analysts despite small fluctuations.
 - Excel maintained a stable position as the second most requested skill, showing its continued relevance in day-to-day analysis and reporting tasks. However, it experienced a noticeable dip in the later months before recovering slightly in December.
 - Python and Tableau followed a similar pattern with moderate demand, occasionally overlapping each other, while SAS consistently ranked the lowest. This suggests that while programming and visualization skills are valued, traditional tools like SAS are becoming less prioritized compared to modern alternatives.
+
+
+## 3. How well do jobs and skills pay for Data Analysts?
+
+To determine which roles and skills offer the highest salaries, I focused on job postings from the US and analyzed their median pay. Before diving into the details, I first examined the salary distributions for common data positions such as Data Scientist, Data Engineer, and Data Analyst to understand which roles typically command the highest compensation.
+
+View my notebook with detailed steps here: [3_Salary_Analysis.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise1_4_Projects/3_Salary_Analysis.ipynb)
+
+### Visualize Data
+
+```python
+sns.boxplot(data=df_data_roles, x='salary_year_avg', y='job_title_short', order=median_salary.index)
+sns.despine()
+plt.xlim(0,600000)
+plt.xlabel('Yearly Salary (USD)')
+plt.ylabel('')
+plt.title('Salary Distributions of Data Jobs in the US', fontsize=15)
+
+plt.gca().xaxis.set_major_formatter(plt.FuncFormatter(lambda x, pos: f'${int(x/1000)}K'))
+
+plt.show()
+```
+
+### Results
+
+![Salary_Analysis](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise1_4_Projects/images/Salary_Analysis_0.png)
+
+### Insights
+
+- Senior roles clearly command higher salaries across the board, with Senior Data Scientists and Senior Data Engineers showing the largest median salaries. This highlights how experience and advanced expertise significantly increase earning potential in the data field.
+- Among non-senior positions, Data Scientists generally earn more than Data Engineers and Data Analysts, indicating that analytical and modeling skills tend to be valued higher than reporting or infrastructure-focused roles.
+- An interesting observation is that Senior Data Analysts still earn less on average than non-senior Data Scientists and Data Engineers. This suggests that technical and modeling expertise in engineering and science roles tend to be rewarded more highly than seniority in purely analytical positions.
+
+
+
+Next, I refined the analysis to focus exclusively on data analyst positions. I examined both the skills that command the highest salaries and those that are most frequently requested. To illustrate these findings, I presented the results using two bar charts.
