@@ -131,11 +131,27 @@ sns.set_theme(style='ticks')
 
 fig, ax = plt.subplots(2, 1)
 
-sns.barplot(data=high_salary, x='median', y=high_salary.index, ax=ax[0], hue='median', palette='dark:b_r', legend=False)
+sns.barplot(
+    data=high_salary,
+    x='median',
+    y=high_salary.index,
+    ax=ax[0],
+    hue='median',
+    palette='dark:b_r',
+    legend=False
+)
 ax[0].set_title('Top 10 Highest Paid Skills for Data Analysts')
 ax[0].set_xlabel('')
 
-sns.barplot(data=top_skills_salary, x='median', y=top_skills_salary.index, ax=ax[1], hue='median', palette='light:b', legend=False)
+sns.barplot(
+    data=top_skills_salary,
+    x='median',
+    y=top_skills_salary.index,
+    ax=ax[1],
+    hue='median',
+    palette='light:b',
+    legend=False
+)
 ax[1].set_xlim(0, 200000)
 ax[1].set_xlabel('Median Salary (USD)')
 ax[1].set_title('Top 10 Most In-Demand Skills for Data Analysts')
@@ -228,3 +244,4 @@ Through this project, I developed both technical and analytical skills while bui
 
 # Conclusion
 
+This project provided a comprehensive view of the data analyst landscape, revealing which skills are most in-demand, how they trend over time, and how they impact earning potential. Through hands-on analysis, I learned that mastering core technical skills like Python and SQL is essential for both employability and competitive salaries, while specialized tools can offer higher financial rewards. Additionally, proficiency in visualization and analytical tools such as Tableau, R, and Excel is crucial for effectively communicating insights. Overall, this experience strengthened my understanding of the end-to-end data workflow, emphasized the importance of data cleaning and thoughtful visualization, and highlighted the need for continuous learning to stay competitive in the evolving field of data analytics.
