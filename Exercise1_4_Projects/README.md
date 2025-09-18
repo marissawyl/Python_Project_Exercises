@@ -37,3 +37,42 @@ plt.show()
 
 - SQL is the most requested skill for Data Analysts (50.8%) and Data Engineers (68.3%), while Python dominates for Data Scientists (72.0%) and is also highly demanded for Data Engineers (64.9%). This shows that mastering both is essential in any data career path.
 - Data Analysts rely more on Excel (40.6%) and Tableau (28.5%) for reporting and visualization, while Data Engineers are expected to know cloud tools like AWS (42.8%) and Azure (32.3%). Data Scientists, on the other hand, complement Python and SQL with R (44.2%) for statistical analysis.
+- Data Analysts are typically expected to be proficient in business-oriented tools such as Excel and Tableau, which support reporting and data visualization. Data Engineers, in contrast, are more often required to work with cloud platforms and big data technologies, including AWS, Azure, and Spark, reflecting the technical nature of building and maintaining data infrastructure. Data Scientists, meanwhile, are frequently expected to bring strong statistical expertise through programming languages like R as well as specialized statistical software such as SAS.
+
+
+## 2. How are in-demand skills trending for Data Analysts?
+
+To explore the skill trends for Data Analysts in 2023, I focused specifically on job postings for that role and organized the required skills based on the month they were listed. This approach highlighted the 5 most in-demand skills each month, providing a clear view of how their popularity shifted over the year.
+
+View my notebook with detailed steps here: [2_Skills_Trend.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise1_4_Projects/2_Skills_Trend.ipynb)
+
+### Visualize Data
+
+```python
+sns.set_theme(style='ticks')
+
+sns.lineplot(data=df_plot, dashes=False, legend=False, palette='hls')
+sns.despine()
+plt.title('Trending Top Skills for Data Analysts in the US')
+plt.ylabel('Likelihood in Job Posting')
+plt.xlabel('2023')
+
+last_values = df_plot.iloc[-1, :]
+
+offsets = {}
+
+for i, val in enumerate(last_values):
+    floored = math.floor(val)
+    if floored not in offsets:
+        offsets[floored] = 0
+    else:
+        offsets[floored] += 2
+
+    y = val - offsets[floored]
+    plt.text(11.2, y, df_plot.columns[i], va='center')
+
+plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
+```
+### Results
+
+![Skill_Trend](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise1_4_Projects/images/Skills_Trend.png)
