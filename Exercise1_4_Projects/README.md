@@ -210,3 +210,12 @@ plt.show()
 - Python and SQL stand out as the most optimal skills for Data Analysts, combining high salaries with strong demand across job postings. This shows their importance as core skills that provide both career stability and competitive pay.
 - Tools like Tableau and R also offer a good balance between demand and salary, making them valuable additions to a data analyst’s toolkit, especially for visualization and statistical analysis.
 - On the other hand, skills such as Word and PowerPoint appear frequently in job postings but are associated with lower salaries, indicating that while they are useful, they do not provide the same level of career leverage as technical or programming skills.
+
+# What I Learned
+
+Through this project, I developed both technical and analytical skills while building a stronger foundation in Python for data analysis. Key lessons from the process include:
+- Gaining practical experience with Python libraries such as Pandas for data manipulation and Seaborn/Matplotlib for creating effective visualizations.
+- Understanding the critical role of data cleaning and preprocessing to ensure accuracy and reliability in analysis results.
+- Strengthening problem-solving skills by debugging issues such as overlapping labels and refining visualizations for clarity.
+- Learning to apply visual storytelling principles, making insights more accessible and easier to interpret through clear and structured charts.
+- Practicing an end-to-end workflow, from formulating questions and analyzing data to documenting findings and presenting them professionally in a portfolio.
