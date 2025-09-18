@@ -73,6 +73,8 @@ for i, val in enumerate(last_values):
     plt.text(11.2, y, df_plot.columns[i], va='center')
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
+
+plt.show()
 ```
 ### Results
 
