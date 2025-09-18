@@ -120,6 +120,40 @@ plt.show()
 - Among non-senior positions, Data Scientists generally earn more than Data Engineers and Data Analysts, indicating that analytical and modeling skills tend to be valued higher than reporting or infrastructure-focused roles.
 - An interesting observation is that Senior Data Analysts still earn less on average than non-senior Data Scientists and Data Engineers. This suggests that technical and modeling expertise in engineering and science roles tend to be rewarded more highly than seniority in purely analytical positions.
 
-
+## Top-Paying and Most In-Demand Skills for Data Analysts
 
 Next, I refined the analysis to focus exclusively on data analyst positions. I examined both the skills that command the highest salaries and those that are most frequently requested. To illustrate these findings, I presented the results using two bar charts.
+
+### Visualize Data
+
+```python
+sns.set_theme(style='ticks')
+
+fig, ax = plt.subplots(2, 1)
+
+sns.barplot(data=high_salary, x='median', y=high_salary.index, ax=ax[0], hue='median', palette='dark:b_r', legend=False)
+ax[0].set_title('Top 10 Highest Paid Skills for Data Analysts')
+ax[0].set_xlabel('')
+
+sns.barplot(data=top_skills_salary, x='median', y=top_skills_salary.index, ax=ax[1], hue='median', palette='light:b', legend=False)
+ax[1].set_xlim(0, 200000)
+ax[1].set_xlabel('Median Salary (USD)')
+ax[1].set_title('Top 10 Most In-Demand Skills for Data Analysts')
+
+for i in range(2):
+    ax[i].set_ylabel('')
+    ax[i].xaxis.set_major_formatter(plt.FuncFormatter(lambda x, pos: f'${int(x/1000)}K'))
+
+fig.tight_layout()
+plt.show()
+```
+
+### Results
+
+![Salary_Analysis](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise1_4_Projects/images/Salary_Analysis.png)
+
+### Insights
+
+- The skills with the highest salaries for Data Analysts are mostly specialized or niche technologies such as dplyr, Bitbucket, GitLab, Solidity, and Hugging Face. This suggests that analysts who combine core analytical abilities with expertise in modern tools or programming frameworks can command significantly higher pay.
+- In contrast, the most in-demand skills are more traditional and widely used, such as Python, Tableau, SQL, R, and Excel. These reflect the essential toolkit for most analyst roles, emphasizing versatility and practical application over specialization.
+- The comparison highlights a clear gap between what is most valued in the job market and what is most common in everyday analyst work. While core skills drive employability, niche technical expertise offers a path to higher earning potential.
