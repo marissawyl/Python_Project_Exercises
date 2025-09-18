@@ -219,3 +219,12 @@ Through this project, I developed both technical and analytical skills while bui
 - Strengthening problem-solving skills by debugging issues such as overlapping labels and refining visualizations for clarity.
 - Learning to apply visual storytelling principles, making insights more accessible and easier to interpret through clear and structured charts.
 - Practicing an end-to-end workflow, from formulating questions and analyzing data to documenting findings and presenting them professionally in a portfolio.
+
+# Challenges I Faced
+
+- **Getting familiar with Python syntax and libraries:** Since I am still new to Python, it took time to understand how Pandas, Matplotlib, and Seaborn work together for data analysis and visualization.
+- **Data cleaning and preparation:** Handling missing values, inconsistent formats, and preparing the dataset for analysis was more challenging than expected, but it helped me understand why preprocessing is such an important step.
+- **Visualization and designing complex visuals:** Making plots clear and readable, managing overlapping labels, scaling charts properly, and creating complex visualizations that are accurate and easy to interpret was challenging, but essential for delivering insights effectively.
+
+# Conclusion
+
