@@ -61,6 +61,7 @@ last_values = df_plot.iloc[-1, :]
 
 offsets = {}
 
+# Manually set the labels for 'tableau' and 'python' since they couldn’t be adjusted with adjustText
 for i, val in enumerate(last_values):
     floored = math.floor(val)
     if floored not in offsets:
@@ -76,3 +77,9 @@ plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
 ### Results
 
 ![Skill_Trend](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise1_4_Projects/images/Skills_Trend.png)
+
+### Insights
+
+- SQL consistently remained the most in-demand skill for Data Analysts throughout 2023, though it showed a slight downward trend over the year. This highlights how SQL continues to be the core technical requirement for analysts despite small fluctuations.
+- Excel maintained a stable position as the second most requested skill, showing its continued relevance in day-to-day analysis and reporting tasks. However, it experienced a noticeable dip in the later months before recovering slightly in December.
+- Python and Tableau followed a similar pattern with moderate demand, occasionally overlapping each other, while SAS consistently ranked the lowest. This suggests that while programming and visualization skills are valued, traditional tools like SAS are becoming less prioritized compared to modern alternatives.
