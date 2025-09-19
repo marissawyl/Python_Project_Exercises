@@ -52,7 +52,7 @@ plt.show()
 
 ### Results
 
-![1_Roles_by_Country.ipynb] (https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/images/Roles_by_Country.png)
+![Roles_by_Country](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/images/Roles_by_Country.png)
 
 ### Insights
 
