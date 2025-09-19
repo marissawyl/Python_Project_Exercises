@@ -21,7 +21,7 @@ I used Python along with essential libraries such as Pandas for data manipulatio
 
 To address this question, I first identified the top 3 job roles based on their prevalence in job postings, then compared their distribution across leading countries. By visualizing the likelihood of each role being posted in different regions, I could observe regional trends and high-demand positions, helping inform strategic career or business decisions in the global data industry.
 
-View my notebook with detailed steps here: [1_Roles_by_Country.ipynb] (https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/1_Roles_by_Country.ipynb)
+View my notebook with detailed steps here: [1_Roles_by_Country.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/1_Roles_by_Country.ipynb)
 
 ### Visualize Data
 
