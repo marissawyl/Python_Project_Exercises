@@ -14,3 +14,11 @@ By focusing on Data Analyst roles, I could concentrate on developing strong anal
 # Tools Used
 
 I used Python along with essential libraries such as Pandas for data manipulation, and Matplotlib and Seaborn for data visualization. The project was developed in Visual Studio Code, which provided a robust environment for coding, testing, and visualizing results efficiently. This combination of tools allowed me to explore the dataset and generate professional, clear visualizations.
+
+# The Analysis
+
+## 1. Which data-related job roles are most in demand across the top eight countries in 2024, and how does their popularity vary by country?
+
+To address this question, I first identified the top 3 job roles based on their prevalence in job postings, then compared their distribution across leading countries. By visualizing the likelihood of each role being posted in different regions, I could observe regional trends and high-demand positions, helping inform strategic career or business decisions in the global data industry.
+
+View my notebook with detailed steps here: [1_Roles_by_Country.ipynb] ()
