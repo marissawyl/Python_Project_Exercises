@@ -127,3 +127,33 @@ plt.show()
 - High-paying skills like TensorFlow, C, C++, JavaScript, and Jupyter offer significant salary potential for Data Analysts, even though they are not necessarily the most common skills in job postings. This suggests that specializing in these areas can give a competitive edge.
 - The most in-demand skills, including SAP, Python, R, SQL, and Excel, are widely sought after in job postings but tend to offer lower median salaries compared to the high-paying skills. This indicates that proficiency in these tools is essential for landing a role, even if they do not maximize earnings immediately.
 - There is a clear gap between high salary skills and high demand skills, highlighting a strategic choice for career development: focusing on popular skills may increase employability, while mastering high-paying, less common skills can boost earning potential for specialized roles.
+
+## 3. Which data roles in India are most likely to provide remote work options in 2024, and how does this vary across data roles?
+
+This analysis compares the remote job share for Data Analysts, Data Engineers, and Data Scientists. Understanding this distribution provides valuable context for both job seekers exploring flexible opportunities and organizations evaluating how their offerings align with market expectations.
+
+View my notebook with detailed steps here: [3_Remote_Jobs.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/3_Remote_Jobs.ipynb)
+
+### Visualize Data
+
+```python
+fig, ax = plt.subplots(1, 3, figsize=(10,3), constrained_layout=True)
+
+for i, role in enumerate(job_roles):
+    wfh_count = df_2024_IN[df_2024_IN['job_title_short'] == role]['job_work_from_home'].value_counts().reindex([False, True], fill_value=0)
+    ax[i].pie(wfh_count, startangle=90, labels=['Not Remote', 'Remote Available'], autopct='%1.1f%%')
+    ax[i].set_title(role)
+
+fig.suptitle('Share of Remote Job Postings by Role in India (2024)', fontsize=15)
+plt.show()
+```
+
+### Results
+
+![Remote_Jobs](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/images/Remote_Jobs.png)
+
+### Insights
+
+- Data Analysts stand out with the highest proportion of remote-friendly roles at 20.5%. This suggests that companies are more open to offering remote work for analysts compared to other data roles.
+- Data Engineers show the lowest availability of remote options, with only 9.7% of postings. This could indicate that engineering work often requires closer collaboration with infrastructure teams, making remote setups less common.
+- Data Scientists fall in between, with 11.7% of postings mentioning remote work. While slightly higher than engineers, the gap compared to analysts highlights that analytical roles may be more adaptable to remote environments.
