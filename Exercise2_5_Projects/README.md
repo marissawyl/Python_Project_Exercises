@@ -201,3 +201,64 @@ plt.show()
 - Data Engineer consistently led the market with the highest number of postings, peaking at 1,771 in August. This trend confirms that engineering expertise in building and maintaining scalable data systems remains the backbone of the data job market in India.
 - Senior roles such as Senior Data Scientist and Senior Data Engineer showed steady demand throughout the year, though at a lower volume compared to mid-level positions. Their stability indicates that while fewer openings exist, these roles remain critical for organizations investing in leadership and advanced expertise.
 - Data Scientist demand surged notably in August, reaching 1,175 postings, showing that companies heavily prioritized advanced analytics talent mid-year. In contrast, Data Analyst roles peaked earlier in March (641 postings) and then declined, suggesting that entry-level and junior positions are more sensitive to market shifts.
+
+## 5. What skill combinations are most in demand for data analysts in India in 2024?
+
+To explore this question, I mapped out the top skills mentioned in job postings and analyzed how frequently they occur together. By looking at these co-occurrences, the goal was to uncover which skills are not only important on their own but also commonly required in combination. This helps to identify clusters of tools and technologies that data analysts are expected to master, making it clearer where to focus skill development.
+
+View my notebook with detailed steps here: [5_Skill_Coocurrences_Pairwise.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/5_Skill_Coocurrences_Pairwise.ipynb)
+
+### Construct the Co-occurrence Matrix
+
+```python
+# Select the top n skills and convert to a set for .intersection()
+top_skills1 = set([s1 for s1, _ in skills_count.most_common(top_n)])
+
+coocurrence1 = Counter()
+
+for skills_2 in df_2024_IN['job_skills']:
+    filtered1 = top_skills1.intersection(skills_2)
+    paired1 = combinations(sorted(filtered1), 2)
+    coocurrence1.update(paired1)
+
+pairs1, cnt = zip(*coocurrence1.items())
+df_pairs1 = pd.DataFrame(pairs1, columns=['Skill_1', 'Skill_2'])
+df_pairs1['cnt'] = cnt
+
+df_matrix = df_pairs1.pivot_table(
+    index='Skill_1',
+    columns='Skill_2',
+    values='cnt',
+    fill_value=0
+)
+
+# Make sure skill names align in both rows and columns before transposing
+skill_names = sorted(top_skills1)
+df_matrix = df_matrix.reindex(index=skill_names, columns=skill_names, fill_value=0)
+
+# Transpose the matrix to convert it into a full matrix
+df_matrix = df_matrix + df_matrix.T
+```
+
+### Visualize Data
+
+```python
+sns.heatmap(data=df_matrix, cmap='Blues')
+plt.title(f"Top {top_n} Skill Co-occurrences for Data Analysts in India (2024)", fontsize=15)
+plt.xlabel('')
+plt.xticks(rotation=45, ha="right")
+plt.ylabel('')
+plt.yticks(rotation=0)
+
+plt.show()
+```
+
+### Results
+
+![Skill_Coocurrences_Pairwise](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/images/Skill_Coocurrences_Pairwise.png)
+
+### Insights
+
+- The strongest pairing in the dataset is SQL with Python, showing that employers highly value professionals who can combine database management with programming for analysis and automation.
+- Excel and Power BI appear frequently together, underlining how traditional spreadsheet expertise is still complemented by modern business intelligence tools for reporting and visualization.
+- While cloud platforms like AWS and Azure do appear, their co-occurrence with other skills is relatively lighter compared to SQL, Python, and BI tools, suggesting that cloud expertise is beneficial but not the top priority for most data analyst roles in India.
