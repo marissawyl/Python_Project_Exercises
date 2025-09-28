@@ -64,7 +64,7 @@ plt.show()
 
 To explore this, I examined the monthly distribution of job postings across six major data roles. Looking at the job postings across 2024 makes it possible to see which roles were consistently in demand and which spiked only at certain times of the year. These patterns offer useful guidance for anyone deciding where to focus their skills and career development in the data field.
 
-View my notebook with detailed steps here: [4_Job_Roles_by_Month.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/4_Job_Roles_by_Month.ipynb)
+View my notebook with detailed steps here: [2_Job_Roles_by_Month.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/2_Job_Roles_by_Month.ipynb)
 
 ### Visualize Data
 
@@ -138,7 +138,7 @@ plt.show()
 
 To explore this, I looked at both the most in-demand and highest-paying skills for Data Analysts. I compared the skills that appear most frequently in job postings with those linked to the top salaries. This helps identify which skills can boost employability, which can maximize earning potential, and where to focus for career growth.
 
-View my notebook with detailed steps here: [2_Salary_by_Skills.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/2_Salary_by_Skills.ipynb)
+View my notebook with detailed steps here: [4_Salary_by_Skills.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/4_Salary_by_Skills.ipynb)
 
 ### Visualize Data
 
