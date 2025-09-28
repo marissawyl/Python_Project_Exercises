@@ -60,7 +60,81 @@ plt.show()
 - Data Analyst positions are relatively lower in India and Canada, but they are more prominent in the United States and France. This indicates that while analysis skills are important, the need for data engineering expertise is currently driving the market in several countries.
 - Data Scientist roles maintain a moderate, steady presence across all countries, showing that while specialized analytics and machine learning skills are valued, the foundational work of managing and engineering data remains a top priority for employers.
 
-## 2. Which skills are driving demand and top salaries for Data Analysts in India in 2024?
+## 2. What do the 2024 hiring trends reveal about the most sought-after data roles in India?
+
+To explore this, I examined the monthly distribution of job postings across six major data roles. Looking at the job postings across 2024 makes it possible to see which roles were consistently in demand and which spiked only at certain times of the year. These patterns offer useful guidance for anyone deciding where to focus their skills and career development in the data field.
+
+View my notebook with detailed steps here: [4_Job_Roles_by_Month.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/4_Job_Roles_by_Month.ipynb)
+
+### Visualize Data
+
+```python
+sns.set_theme(style='ticks')
+
+ax = sns.lineplot(data=df_pivot, dashes=False)
+sns.despine()
+
+plt.title('Monthly Trends of Data-related Job Postings in India (2024)', fontsize=15)
+plt.xlabel('2024')
+plt.ylabel('Number of Job Postings')
+plt.legend(
+    title='Job Roles',
+    loc='upper right',
+    bbox_to_anchor=(1.4, 1)
+)
+
+# Find the max value for each job role
+for job_role in df_pivot.columns:
+    y_max1 = df_pivot[job_role].max()
+    x_max1 = df_pivot[job_role].idxmax()
+
+    ax.scatter(x_max1, y_max1, color='red', zorder=5)
+    ax.text(x_max1, y_max1 + 50, y_max1, ha='center', color='red', fontsize=9, fontweight='bold')
+
+plt.show()
+```
+
+### Results
+
+![Job_Roles_by_Month](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/images/Job_Roles_by_Month.png)
+
+### Insights
+
+- Data Engineer consistently led the market with the highest number of postings, peaking at 1,771 in August. This trend confirms that engineering expertise in building and maintaining scalable data systems remains the backbone of the data job market in India.
+- Senior roles such as Senior Data Scientist and Senior Data Engineer showed steady demand throughout the year, though at a lower volume compared to mid-level positions. Their stability indicates that while fewer openings exist, these roles remain critical for organizations investing in leadership and advanced expertise.
+- Data Scientist demand surged notably in August, reaching 1,175 postings, showing that companies heavily prioritized advanced analytics talent mid-year. In contrast, Data Analyst roles peaked earlier in March (641 postings) and then declined, suggesting that entry-level and junior positions are more sensitive to market shifts.
+
+## 3. Which data roles in India are most likely to provide remote work options in 2024, and how does this vary across data roles?
+
+This analysis compares the remote job share for Data Analysts, Data Engineers, and Data Scientists. Understanding this distribution provides valuable context for both job seekers exploring flexible opportunities and organizations evaluating how their offerings align with market expectations.
+
+View my notebook with detailed steps here: [3_Remote_Jobs.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/3_Remote_Jobs.ipynb)
+
+### Visualize Data
+
+```python
+fig, ax = plt.subplots(1, 3, figsize=(10,3), constrained_layout=True)
+
+for i, role in enumerate(job_roles):
+    wfh_count = df_2024_IN[df_2024_IN['job_title_short'] == role]['job_work_from_home'].value_counts().reindex([False, True], fill_value=0)
+    ax[i].pie(wfh_count, startangle=90, labels=['Not Remote', 'Remote Available'], autopct='%1.1f%%')
+    ax[i].set_title(role)
+
+fig.suptitle('Share of Remote Job Postings by Role in India (2024)', fontsize=15)
+plt.show()
+```
+
+### Results
+
+![Remote_Jobs](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/images/Remote_Jobs.png)
+
+### Insights
+
+- Data Analysts stand out with the highest proportion of remote-friendly roles at 20.5%. This suggests that companies are more open to offering remote work for analysts compared to other data roles.
+- Data Engineers show the lowest availability of remote options, with only 9.7% of postings. This could indicate that engineering work often requires closer collaboration with infrastructure teams, making remote setups less common.
+- Data Scientists fall in between, with 11.7% of postings mentioning remote work. While slightly higher than engineers, the gap compared to analysts highlights that analytical roles may be more adaptable to remote environments.
+
+## 4. Which skills are driving demand and top salaries for Data Analysts in India in 2024?
 
 To explore this, I looked at both the most in-demand and highest-paying skills for Data Analysts. I compared the skills that appear most frequently in job postings with those linked to the top salaries. This helps identify which skills can boost employability, which can maximize earning potential, and where to focus for career growth.
 
@@ -127,80 +201,6 @@ plt.show()
 - High-paying skills like TensorFlow, C, C++, JavaScript, and Jupyter offer significant salary potential for Data Analysts, even though they are not necessarily the most common skills in job postings. This suggests that specializing in these areas can give a competitive edge.
 - The most in-demand skills, including SAP, Python, R, SQL, and Excel, are widely sought after in job postings but tend to offer lower median salaries compared to the high-paying skills. This indicates that proficiency in these tools is essential for landing a role, even if they do not maximize earnings immediately.
 - There is a clear gap between high salary skills and high demand skills, highlighting a strategic choice for career development: focusing on popular skills may increase employability, while mastering high-paying, less common skills can boost earning potential for specialized roles.
-
-## 3. Which data roles in India are most likely to provide remote work options in 2024, and how does this vary across data roles?
-
-This analysis compares the remote job share for Data Analysts, Data Engineers, and Data Scientists. Understanding this distribution provides valuable context for both job seekers exploring flexible opportunities and organizations evaluating how their offerings align with market expectations.
-
-View my notebook with detailed steps here: [3_Remote_Jobs.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/3_Remote_Jobs.ipynb)
-
-### Visualize Data
-
-```python
-fig, ax = plt.subplots(1, 3, figsize=(10,3), constrained_layout=True)
-
-for i, role in enumerate(job_roles):
-    wfh_count = df_2024_IN[df_2024_IN['job_title_short'] == role]['job_work_from_home'].value_counts().reindex([False, True], fill_value=0)
-    ax[i].pie(wfh_count, startangle=90, labels=['Not Remote', 'Remote Available'], autopct='%1.1f%%')
-    ax[i].set_title(role)
-
-fig.suptitle('Share of Remote Job Postings by Role in India (2024)', fontsize=15)
-plt.show()
-```
-
-### Results
-
-![Remote_Jobs](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/images/Remote_Jobs.png)
-
-### Insights
-
-- Data Analysts stand out with the highest proportion of remote-friendly roles at 20.5%. This suggests that companies are more open to offering remote work for analysts compared to other data roles.
-- Data Engineers show the lowest availability of remote options, with only 9.7% of postings. This could indicate that engineering work often requires closer collaboration with infrastructure teams, making remote setups less common.
-- Data Scientists fall in between, with 11.7% of postings mentioning remote work. While slightly higher than engineers, the gap compared to analysts highlights that analytical roles may be more adaptable to remote environments.
-
-## 4. What do the 2024 hiring trends reveal about the most sought-after data roles in India?
-
-To explore this, I examined the monthly distribution of job postings across six major data roles. Looking at the job postings across 2024 makes it possible to see which roles were consistently in demand and which spiked only at certain times of the year. These patterns offer useful guidance for anyone deciding where to focus their skills and career development in the data field.
-
-View my notebook with detailed steps here: [4_Job_Roles_by_Month.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/4_Job_Roles_by_Month.ipynb)
-
-### Visualize Data
-
-```python
-sns.set_theme(style='ticks')
-
-ax = sns.lineplot(data=df_pivot, dashes=False)
-sns.despine()
-
-plt.title('Monthly Trends of Data-related Job Postings in India (2024)', fontsize=15)
-plt.xlabel('2024')
-plt.ylabel('Number of Job Postings')
-plt.legend(
-    title='Job Roles',
-    loc='upper right',
-    bbox_to_anchor=(1.4, 1)
-)
-
-# Find the max value for each job role
-for job_role in df_pivot.columns:
-    y_max1 = df_pivot[job_role].max()
-    x_max1 = df_pivot[job_role].idxmax()
-
-    ax.scatter(x_max1, y_max1, color='red', zorder=5)
-    ax.text(x_max1, y_max1 + 50, y_max1, ha='center', color='red', fontsize=9, fontweight='bold')
-
-plt.show()
-```
-
-### Results
-
-![Job_Roles_by_Month](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise2_5_Projects/images/Job_Roles_by_Month.png)
-
-### Insights
-
-- Data Engineer consistently led the market with the highest number of postings, peaking at 1,771 in August. This trend confirms that engineering expertise in building and maintaining scalable data systems remains the backbone of the data job market in India.
-- Senior roles such as Senior Data Scientist and Senior Data Engineer showed steady demand throughout the year, though at a lower volume compared to mid-level positions. Their stability indicates that while fewer openings exist, these roles remain critical for organizations investing in leadership and advanced expertise.
-- Data Scientist demand surged notably in August, reaching 1,175 postings, showing that companies heavily prioritized advanced analytics talent mid-year. In contrast, Data Analyst roles peaked earlier in March (641 postings) and then declined, suggesting that entry-level and junior positions are more sensitive to market shifts.
 
 ## 5. What skill combinations are most in demand for data analysts in India in 2024?
 
