@@ -112,7 +112,7 @@ plt.show()
 
 ### Results
 
-![Salary_Analysis](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_1/images/Salary_Analysis_0.png)
+![Salary_Analysis](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_1/images/Salary_Analysis_1.png)
 
 ### Insights
 
