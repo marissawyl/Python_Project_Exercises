@@ -61,3 +61,63 @@ plt.show()
 - Ride demand clearly increases over time, with noticeable growth from January through May, before stabilizing slightly in June. This suggests a steady rise in usage during the first half of the year.
 - Fridays and Saturdays consistently record the highest number of pickups each month, highlighting weekends as the busiest period for ride demand.
 - Mondays show the lowest demand compared to other weekdays, reinforcing the idea that commuting patterns alone do not drive as much activity as social or leisure-related travel later in the week.
+
+## 2. What are the peak demand hours for Uber rides in NYC, and how do they vary across weekdays and weekends?
+
+To explore this, I grouped Uber pickup data from New York City (Jan–Jun 2015) by both the hour of the day and the day of the week. By plotting these trends, it became possible to observe how demand shifts throughout the day and compare weekdays with weekends. This visualization highlights not only the daily peaks but also the differences in behavior between weekdays and weekends, providing a better understanding of urban ride-hailing demand.
+
+View my notebook with detailed steps here: [2_Rush_Hour_by_Weekdays.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_3/2_Rush_Hour_by_Weekdays.ipynb)
+
+### Visualize Data
+
+```python
+# Set Seaborn theme for cleaner style
+sns.set_theme(style='ticks')
+plt.figure(figsize=(10, 5))
+
+# Create a point plot → each line shows number of pickups per hour for each weekday
+g = sns.pointplot(
+    data=df_grouped,
+    x='Pickup_hour',
+    y='size',
+    hue='Pickup_day',
+    palette='tab10',
+    legend=False        # turn off legend, labels will be added manually
+)
+sns.despine()   # remove top and right borders for a clean look
+
+# Add plot title and axis labels
+plt.suptitle('Hourly Ride Demand by Day of Week', fontsize=15, weight='bold')
+plt.title('New York City Uber Pickups (Jan–Jun 2015)', fontsize=13, style='italic')
+plt.xlabel('Pickup Hour (0–23)')
+plt.ylabel('Number of Pickups (rides)')
+
+# Format y-axis with thousands separator
+plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda y, pos: f'{y:,.0f}'))
+
+# === Add manual labels at the end of each line (on the right side) ===
+texts = []
+
+for i, text in enumerate(df_grouped['Pickup_day'].unique()):
+    y_axis = df_grouped[df_grouped['Pickup_hour'] == 23]['size'].iloc[i]
+    texts.append(plt.text(23.5, y_axis, text, va='center'))
+
+# Adjust labels to avoid overlapping
+adjust_text(texts)
+
+# Shift labels a bit further right for clarity
+for t in texts:
+    t.set_x(23.8)
+
+plt.show()
+```
+
+### Results
+
+![Rush_Hour_by_Weekdays](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_3/images/Rush_Hour_by_Weekdays.png)
+
+### Insights
+
+- The lowest demand appears consistently around 3–5 AM across all days, when the city is mostly inactive. This shows a universal "quiet period" regardless of the weekday or weekend.
+- On weekdays, there is a sharp rise in pickups during morning hours (7–9 AM) that aligns with commuting times, followed by another peak in the late afternoon and evening (5–8 PM). This reflects typical work-related travel behavior.
+- Weekends show a different pattern: demand continues to rise steadily throughout the day, reaching the highest levels late at night, especially on Friday and Saturday. This suggests that social and leisure activities drive late-night demand compared to weekday commuting peaks.
