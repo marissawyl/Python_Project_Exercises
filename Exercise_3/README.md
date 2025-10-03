@@ -121,3 +121,34 @@ plt.show()
 - The lowest demand appears consistently around 3–5 AM across all days, when the city is mostly inactive. This shows a universal "quiet period" regardless of the weekday or weekend.
 - On weekdays, there is a sharp rise in pickups during morning hours (7–9 AM) that aligns with commuting times, followed by another peak in the late afternoon and evening (5–8 PM). This reflects typical work-related travel behavior.
 - Weekends show a different pattern: demand continues to rise steadily throughout the day, reaching the highest levels late at night, especially on Friday and Saturday. This suggests that social and leisure activities drive late-night demand compared to weekday commuting peaks.
+
+## 3. Does the relationship between time of day and month reveal shifting travel behaviors in New York City’s Uber demand? What signals can these patterns offer for operational or business decisions?
+
+To uncover this, I mapped Uber pickup data from April to September 2014 into a heatmap that combines two critical dimensions: hours of the day and months of the year. This heatmap highlights not just daily rush hour peaks, but also how those peaks shift over time. By layering the hourly and monthly dimensions, the visualization makes it easier to spot behavioral changes in ride demand and the potential operational challenges or opportunities they create.
+
+View my notebook with detailed steps here: [3_Rush_Hour_by_Months.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_3/3_Rush_Hour_by_Months.ipynb)
+
+### Visualize Data
+
+```python
+ax = sns.heatmap(data=df_pivot, cmap="Blues")
+
+ax.xaxis.set_ticks_position('top')
+ax.set_xlabel('')
+ax.set_ylabel('Hour of Day')
+
+plt.suptitle('Average Uber Pickups per Hour across Months', fontsize=14, weight="bold", y=1.04)
+plt.title('Data aggregated from April to September 2014', fontsize=10, style="italic", pad=30, loc='center')
+
+plt.show()
+```
+
+### Results
+
+![Rush_Hour_by_Months](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_3/images/Rush_Hour_by_Months.png)
+
+### Insights
+
+- Evening demand shows a clear escalation over the months, with September standing out as the strongest. Late afternoon and evening hours (around 5–9 PM) become increasingly saturated compared to earlier months, signaling stronger reliance on Uber for commuting or after-work travel. This suggests a growing need for resource allocation, such as more drivers or surge pricing, in the evening slots as the year progresses.
+- Morning demand is relatively stable across months, peaking modestly between 7–9 AM. The consistency here indicates that commuter behavior in the mornings is predictable and less influenced by seasonal shifts, meaning operations can maintain a steady supply strategy for these hours.
+- Comparing months, the overall intensity of pickups increases noticeably by September. This trend suggests not only higher adoption of Uber but also possible external drivers like seasonal tourism, events, or changes in public transit usage. Recognizing this ramp-up can help anticipate future spikes and inform marketing strategies or partnerships during high-demand months.
