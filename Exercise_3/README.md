@@ -257,17 +257,25 @@ plt.show()
 
 # What I Learned
 
-Through this project, I significantly strengthened both my analytical thinking and technical proficiency in Python-based data analysis. Some of the most valuable takeaways include:
-- Gaining hands-on experience with time-series data using Pandas, including resampling, rolling calculations, and identifying key market patterns such as rallies and drawdowns.
-- Developing a deeper understanding of data visualization design, knowing when to use line charts, heatmaps, scatter plots, and regression models to effectively communicate complex relationships.
-- Learning to interpret correlations and trends in real-world contexts, such as the interplay between Uber’s supply-demand balance and Bitcoin’s volume-return dynamics.
-- Enhancing my ability to blend analytical rigor with storytelling, ensuring that each visualization not only looks appealing but also delivers clear, actionable insights.
-- Building stronger workflow discipline, from data cleaning and transformation to validation, visualization, and documentation for professional presentation.
+Through this project, I deepened my technical and analytical skills while improving my ability to turn data into meaningful insights. Some of the most valuable lessons I gained include:
+- Gaining practical experience in using Pandas for complex data manipulation and Seaborn/Matplotlib for producing clear, data-driven visualizations.
+- Learning to work effectively with time-based data, such as extracting and combining month, weekday, and hour information to uncover user behavior trends.
+- Understanding the importance of data preprocessing and cleaning, especially when dealing with datetime conversions and ensuring consistency across columns.
+- Strengthening my ability to communicate insights visually, focusing not only on the accuracy of data but also on how the story is presented to the audience.
+- Developing a more structured workflow, from data wrangling to visualization, to support analytical reasoning and business interpretation.
 
 # Challenges I Faced
 
 This project presented several challenges that tested both technical and creative problem-solving skills:
-- Handling messy and incomplete data: Some datasets had missing dates, non-numeric values, or inconsistent structures, which required careful parsing, cleaning, and validation before visualization.
-- Designing clear and interpretable visuals: Representing multi-layered information, such as hourly demand patterns or regression lines across multiple subplots, demanded precision in layout and labeling.
-- Balancing technical detail with clarity: It was challenging to incorporate meaningful annotations, statistical references, and trend lines without overcrowding the visuals. Achieving that balance improved my attention to design logic.
-- 
+- Managing datetime transformations was more complex than expected. Extracting and aligning time components required precise logic to avoid aggregation errors.
+- Choosing the right visualization structure took trial and error. It was challenging to display multi-dimensional time data without overcrowding the charts.
+- Maintaining clarity and readability in Seaborn plots required careful use of color palettes, labels, and formatting to make insights stand out effectively.
+- Balancing technical precision with storytelling was another key challenge, including ensuring that the visuals were both analytically accurate and intuitively understandable.
+
+# Conclusion
+
+This project provided a clear understanding of how Uber ride demand varies by month, weekday, and hour across New York City. It revealed strong behavioral patterns, such as higher activity during weekday rush hours and seasonal shifts in overall demand.
+
+Beyond pattern recognition, the analysis showed how data insights can support business and operational strategies, including driver allocation and demand forecasting.
+
+Overall, the experience strengthened my ability to manage an end-to-end analysis pipeline, from data cleaning and feature extraction to visualization and interpretation, while sharpening my understanding of how data analytics can drive real-world decision-making.
