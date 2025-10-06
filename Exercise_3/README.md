@@ -152,3 +152,105 @@ plt.show()
 - Evening demand shows a clear escalation over the months, with September standing out as the strongest. Late afternoon and evening hours (around 5–9 PM) become increasingly saturated compared to earlier months, signaling stronger reliance on Uber for commuting or after-work travel. This suggests a growing need for resource allocation, such as more drivers or surge pricing, in the evening slots as the year progresses.
 - Morning demand is relatively stable across months, peaking modestly between 7–9 AM. The consistency here indicates that commuter behavior in the mornings is predictable and less influenced by seasonal shifts, meaning operations can maintain a steady supply strategy for these hours.
 - Comparing months, the overall intensity of pickups increases noticeably by September. This trend suggests not only higher adoption of Uber but also possible external drivers like seasonal tourism, events, or changes in public transit usage. Recognizing this ramp-up can help anticipate future spikes and inform marketing strategies or partnerships during high-demand months.
+
+## 4. Can the relationship between driver supply and trip demand reveal how efficiently Uber balanced the two across its New York City bases?
+
+To uncover this relationship, I examined Uber’s active vehicles (supply) and trip volumes (demand) for each base during February 2015. I visualized both metrics by day of the week, applying linear regression to estimate how tightly supply and demand moved together. The slope of each regression line serves as a proxy for demand sensitivity, showing how much trip volume changes for every additional active vehicle.
+
+View my notebook with detailed steps here: [4_Active_Vehicles_vs_Trips_Analysis.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_3/4_Active_Vehicles_vs_Trips_Analysis.ipynb)
+
+### Visualize Data
+
+```python
+# Create FacetGrid scatterplots for each dispatching base
+g1 = sns.FacetGrid(
+    data=df_grouped,
+    col='dispatching_base_number',
+    hue='day_of_week',
+    col_wrap=3,
+    sharex=False, sharey=False,
+    height=4
+)
+
+# Plot scatter points: active_vehicles vs trips
+g1.map(sns.scatterplot, 'active_vehicles', 'trips', alpha=0.7)
+
+# Loop through each facet and add regression line + labels
+for ax, base in zip(g1.axes.flat, df_grouped['dispatching_base_number'].unique()):
+    df_base = df_grouped[df_grouped['dispatching_base_number'] == base]
+
+    # Compute linear regression slope and intercept
+    slope, intercept = np.polyfit(df_base['active_vehicles'], df_base['trips'], 1)
+
+    # Plot regression line
+    sns.regplot(
+        data=df_base,
+        x='active_vehicles',
+        y='trips',
+        scatter=False,
+        ax=ax,
+        line_kws={'color':'black', 'alpha':0.6, 'lw':2}
+    )
+    
+    # Add title with slope information
+    ax.set_title(f'Base number: {base} (slope={slope:.1f})')
+
+    # Format axis tick labels (in thousands)
+    ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda y, pos: f'{(y/1000):.1f}K'))
+    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, pos: f'{int(y/1000)}K'))
+
+    # Get min and max of x-axis values
+    x_min, x_max = df_base['active_vehicles'].min(), df_base['active_vehicles'].max()
+
+    # Ensure consistent number of ticks across facets
+    ax.set_xticks(np.linspace(x_min, x_max, 6))
+
+    # Add day-of-week text labels and adjust to avoid overlap
+    texts = [ax.text(x+20, y, day, va='center') 
+             for x, y, day in zip(df_base['active_vehicles'], df_base['trips'], df_base['day_of_week'])]
+    adjust_text(texts, ax=ax)
+
+# Set axis labels for all facets
+g1.set_axis_labels('Active Vehicles (Supply)', 'Trips (Demand)')
+
+# Add overall title and subtitle
+g1.figure.subplots_adjust(top=0.87)
+month_name = df_foil_month['month'].iloc[0]
+plt.suptitle(
+    f'Uber Active Vehicles vs Trips by Day of Week in New York ({month_name} 2015)',
+    fontsize=15,
+    weight='bold'
+)
+
+# Configure subtitle text and position
+g1.figure.text(
+    0.5,
+    0.93,
+    'Regression line represents linear trend between supply and demand, slope shown per base',
+    ha='center',
+    fontsize=12,
+    style='italic'
+)
+
+# Add legend for regression line
+reg_line = mlines.Line2D([], [], color='black', lw=2, label='Regression Line')
+g1.figure.legend(
+    handles=[reg_line],
+    loc='upper right',
+    bbox_to_anchor=(1, 0.95),
+    fontsize=12,
+    frameon=True
+)
+
+plt.show()
+```
+
+### Results
+
+![Active_Vehicles_vs_Trips_Analysis](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_3/images/Active_Vehicles_vs_Trips_Analysis.png)
+
+### Insights
+
+- Across all bases, the regression lines reveal a clear positive relationship between active vehicles and trip volume, meaning that when more drivers are on the road, demand generally rises in tandem. This indicates strong coordination between supply and demand in Uber’s system during the observed period.
+- Bases like B02682 and B02617 show steeper slopes (≈13), suggesting higher responsiveness of demand to additional driver supply. These bases likely operated in busier or more central zones, where marginal increases in available vehicles translated quickly into completed trips.
+- Weekends, especially Friday and Saturday, consistently appear near the upper end of each trend line, signaling surges in both supply and demand. This pattern implies effective scaling of driver availability to match peak weekend activity — an important operational insight for scheduling and incentive design.
