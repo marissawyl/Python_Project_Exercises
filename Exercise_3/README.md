@@ -254,3 +254,20 @@ plt.show()
 - Across all bases, the regression lines reveal a clear positive relationship between active vehicles and trip volume, meaning that when more drivers are on the road, demand generally rises in tandem. This indicates strong coordination between supply and demand in Uber’s system during the observed period.
 - Bases like B02682 and B02617 show steeper slopes (≈13), suggesting higher responsiveness of demand to additional driver supply. These bases likely operated in busier or more central zones, where marginal increases in available vehicles translated quickly into completed trips.
 - Weekends, especially Friday and Saturday, consistently appear near the upper end of each trend line, signaling surges in both supply and demand. This pattern implies effective scaling of driver availability to match peak weekend activity, which is an important operational insight for scheduling and incentive design.
+
+# What I Learned
+
+Through this project, I significantly strengthened both my analytical thinking and technical proficiency in Python-based data analysis. Some of the most valuable takeaways include:
+- Gaining hands-on experience with time-series data using Pandas, including resampling, rolling calculations, and identifying key market patterns such as rallies and drawdowns.
+- Developing a deeper understanding of data visualization design, knowing when to use line charts, heatmaps, scatter plots, and regression models to effectively communicate complex relationships.
+- Learning to interpret correlations and trends in real-world contexts, such as the interplay between Uber’s supply-demand balance and Bitcoin’s volume-return dynamics.
+- Enhancing my ability to blend analytical rigor with storytelling, ensuring that each visualization not only looks appealing but also delivers clear, actionable insights.
+- Building stronger workflow discipline, from data cleaning and transformation to validation, visualization, and documentation for professional presentation.
+
+# Challenges I Faced
+
+This project presented several challenges that tested both technical and creative problem-solving skills:
+- Handling messy and incomplete data: Some datasets had missing dates, non-numeric values, or inconsistent structures, which required careful parsing, cleaning, and validation before visualization.
+- Designing clear and interpretable visuals: Representing multi-layered information, such as hourly demand patterns or regression lines across multiple subplots, demanded precision in layout and labeling.
+- Balancing technical detail with clarity: It was challenging to incorporate meaningful annotations, statistical references, and trend lines without overcrowding the visuals. Achieving that balance improved my attention to design logic.
+- 
