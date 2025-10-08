@@ -77,3 +77,75 @@ fig.show()
 - From 2013 to 2016, prices moved gradually with moderate shifts, but starting in early 2017, the growth line steepened sharply, hinting at rising confidence or new market catalysts.
 - Within July 2017, daily price movements were highly volatile, with sharp dips followed by strong recoveries — indicating active trading sentiment and possible speculation during the rapid growth phase.
 - The recovery toward the end of July aligned with the broader upward trajectory, suggesting continued positive sentiment throughout that period.
+
+## 2. What can Bitcoin’s daily returns from 2013 to 2017 tell us about how its volatility evolved during its early growth years?
+
+To dig into this, I analyzed daily return data from 2013 to 2017 to track how price fluctuations changed through time. The histogram visualizes the overall distribution of daily returns, showing how often small versus large price movements occurred. Meanwhile, the yearly boxplots compare volatility patterns across different periods, helping pinpoint when the market experienced sharper or steadier movements. The combined analysis offers a more comprehensive view of Bitcoin’s volatility dynamics throughout its early expansion period.
+
+View my notebook with detailed steps here: [2_Volatility_Analysis.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_4/2_Volatility_Analysis.ipynb)
+
+### Visualize Data
+
+```python
+# Create histogram of daily returns to visualize overall distribution
+fig_histo = go.Histogram(
+    x=df['Close_price_pct'],
+    nbinsx=100, # Number of bin
+    name='Daily Return Distribution',
+    marker=dict(
+        line=dict(
+            color='black',
+            width=1
+        )
+    )
+)
+
+# Create boxplot of daily returns per year to compare volatility across time
+fig_boxplot = go.Box(
+    x=df.index.strftime('%Y'),
+    y=df['Close_price_pct'],
+    boxmean='sd'    # add standard deviation line
+)
+
+# Create a subplot layout
+fig = make_subplots(
+    rows=2, cols=1,
+    shared_xaxes=False,
+    subplot_titles=('Distribution of Daily Returns from 2013 to 2017', 'Yearly Volatility Comparison of Daily Returns')
+)
+
+# Create a subplot layout
+fig.add_trace(fig_histo, row=1, col=1)
+fig.add_trace(fig_boxplot, row=2, col=1)
+
+fig.update_layout(
+    height=800,
+    showlegend=False,
+    title='Bitcoin Price Dynamics: Long-Term Trends and Short-Term Volatility (2013–2017)',
+    template='plotly_white'
+)
+
+# Add axis labels to histogram
+fig.update_xaxes(title_text='Daily Return (%)', row=1, col=1)
+fig.update_yaxes(title_text='Frequency', row=1, col=1)
+
+# Add axis labels to boxplot
+fig.update_xaxes(title_text='Year', row=2, col=1)
+fig.update_yaxes(
+    title_text='Daily Return (%)',
+    range=[-20, 20],    # set the y-axis values
+    row=2, col=1
+)
+
+fig.show()
+```
+
+### Results
+
+![Volatility_Analysis](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_4/image/Volatility_Analysis.png)
+
+### Insights
+
+- The histogram shows a clear concentration of daily returns around zero, but with noticeable fat tails on both sides — meaning that while most price changes were modest, extreme movements were not uncommon.
+- Yearly comparisons reveal that volatility remained present throughout the 2013–2017 period, though 2013 and 2017 stand out with wider ranges and more outliers, suggesting periods of heightened speculative activity.
+- Despite large swings, the median daily returns across years stayed close to zero, indicating that Bitcoin’s dramatic growth phases were driven more by clusters of large positive days than by a steady upward drift.
