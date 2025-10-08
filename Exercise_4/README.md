@@ -149,3 +149,63 @@ fig.show()
 - The histogram shows a clear concentration of daily returns around zero, but with noticeable fat tails on both sides — meaning that while most price changes were modest, extreme movements were not uncommon.
 - Yearly comparisons reveal that volatility remained present throughout the 2013–2017 period, though 2013 and 2017 stand out with wider ranges and more outliers, suggesting periods of heightened speculative activity.
 - Despite large swings, the median daily returns across years stayed close to zero, indicating that Bitcoin’s dramatic growth phases were driven more by clusters of large positive days than by a steady upward drift.
+
+## 3. Does higher Bitcoin trading volume tend to move hand in hand with stronger daily returns?
+
+To explore this, I plotted daily close-to-close returns against the logarithmic scale of Bitcoin’s daily trading volume. By combining both Pearson and Spearman correlation values, I aimed to capture not just linear but also rank-based relationships between the two metrics. This visualization helps illustrate whether larger trading activity corresponds to stronger price movements or if volume and return patterns follow separate paths.
+
+View my notebook with detailed steps here: [3_Return_Volume_Correlation_Analysis.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_4/3_Return_Volume_Correlation_Analysis.ipynb)
+
+### Calculate the Pearson and Spearman values
+
+```python
+# Calculate correlation between trading volume and daily returns
+pearson_val = (
+    df_2014_2017[['Volume', 'Close_return']]
+    .corr(method='pearson')
+    .loc['Volume', 'Close_return']
+)
+
+spearman_val = (
+    df_2014_2017[['Volume', 'Close_return']]
+    .corr(method='spearman')
+    .loc['Volume', 'Close_return']
+)
+```
+
+### Visualize Data
+
+```python
+# Create scatter plot: Volume (log scale) vs Daily Returns
+fig_scatter = go.Scatter(   
+    x=np.log10(df_2014_2017['Volume']), # log scale reduces skew in Volume data
+    y=df_2014_2017['Close_return'],
+    mode='markers',
+    marker=dict(size=6, color='blue', opacity=0.6)
+)
+
+# Build figure
+fig = go.Figure(fig_scatter)
+
+# Customize layout
+fig.update_layout(
+    height=600,
+    width=1000,
+    title=f'Relationship Between Daily Trading Volume and Bitcoin Daily Returns<br><sub>Pearson={pearson_val:.3f}, Spearman={spearman_val:.3f}</sub>',
+    xaxis_title='Logarithmic Scale of Daily Trading Volume (BTC)',
+    yaxis_title='Daily Close-to-Close Returns (%)',
+    template='plotly_white'
+)
+
+fig.show()
+```
+
+### Results
+
+![Return_Volume_Correlation_Analysis](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_4/image/Return_Volume_Correlation_Analysis.png)
+
+### Insights
+
+- The scatter plot shows a wide spread of points without a clear upward or downward trend, reflecting that daily trading volume and returns don’t have a strong direct relationship.
+- Both correlation coefficients (Pearson = 0.060, Spearman = 0.138) confirm this weak association, which suggesting that Bitcoin’s price swings weren’t primarily driven by short-term changes in trading volume.
+- The slight positive skew hints that on some days, higher volumes coincide with larger returns, but this pattern isn’t consistent enough to indicate a stable correlation.
