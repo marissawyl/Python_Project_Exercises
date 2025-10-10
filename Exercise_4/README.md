@@ -209,3 +209,68 @@ fig.show()
 - The scatter plot shows a wide spread of points without a clear upward or downward trend, reflecting that daily trading volume and returns don’t have a strong direct relationship.
 - Both correlation coefficients (Pearson = 0.060, Spearman = 0.138) confirm this weak association, which suggesting that Bitcoin’s price swings weren’t primarily driven by short-term changes in trading volume.
 - The slight positive skew hints that on some days, higher volumes coincide with larger returns, but this pattern isn’t consistent enough to indicate a stable correlation.
+
+## 4. How did Bitcoin’s price move during 2016, a year that set the stage before its big boom in 2017?
+
+To explore this, I focused on Bitcoin’s 2016 price data and identified its largest single rally and drawdown within the year. The line chart shows the daily closing prices, with key points marked to highlight both extremes: a sharp 33.4% surge and a 28.6% drop. This simple view helps capture how quickly the market could swing during Bitcoin’s early adoption phase, capturing the tension between optimism and correction in a single year.
+
+View my notebook with detailed steps here: [4_Crash_Rally_Analysis.ipynb](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_4/4_Crash_Rally_Analysis.ipynb)
+
+### Visualize Data
+
+```python
+# ---- Plotting ----
+fig = go.Figure()
+
+# Line plot of closing prices
+fig_line = go.Scatter(
+    x=df_2016.index,
+    y=df_2016['Close'],
+    mode='lines',
+    name='Close Price'
+)
+
+# Mark the largest drawdown
+fig_drawdown = go.Scatter(
+    x=[drawdown_max_idx],
+    y=[df_2016.loc[drawdown_max_idx, 'Close']],
+    mode='markers+text',
+    marker=dict(color='red', size=10),
+    text=f'Crash {drawdown_max_val*100:.1f}%',
+    textposition='bottom center',
+    name='Largest Drawdown'
+)
+
+# Mark the largest rally
+fig_rally = go.Scatter(
+    x=[rally_max_idx],
+    y=[df_2016.loc[rally_max_idx, 'Close']],
+    mode='markers+text',
+    marker=dict(color='green', size=10),
+    text=f'Rally {rally_max_val*100:.1f}%',
+    textposition='top center',
+    name='Largest Rally'
+)
+
+# Add all plots to the figure
+fig.add_traces([fig_line, fig_drawdown, fig_rally])
+
+fig.update_layout(
+    title='Bitcoin Price Movements with Largest Crash and Rally'\
+          '<br><sub>Case Study: Year 2016</sub>',
+    xaxis_title='Date',
+    yaxis_title='Closing Price (USD)'
+)
+
+fig.show()
+```
+
+### Results
+
+![Crash_Rally_Analysis](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_4/image/Crash_Rally_Analysis.png)
+
+### Insights
+
+- The largest rally occurred around mid-2016, with prices surging more than 30% within a short period, signaling renewed investor confidence and momentum in Bitcoin’s growth.
+- Not long after, the market experienced a significant 28.6% drop, underlining how volatile the asset remained even as it gained mainstream attention.
+- Despite both extremes, Bitcoin closed the year near its highs, showing that 2016 marked a turning point toward broader recovery and sustained upward momentum.
