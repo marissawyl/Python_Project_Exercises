@@ -4,7 +4,7 @@ This project is part of my journey to deepen my Python and data analysis skills.
 
 # Background
 
-The goal of this analysis is to explore the demand for Data Analyst roles in India in 2024. While data engineering positions show the highest demand, I chose to focus on Data Analyst roles for several reasons:  
+The goal of this analysis is to explore the demand for Data Analyst roles in India in 2024. While Data Engineering positions show the highest demand, I chose to focus on Data Analyst roles for several reasons:  
 1. **Learning focus**: This project is primarily about honing data analysis skills, including data cleaning, exploration, and visualization.  
 2. **Actionable insights**: Understanding trends in Data Analyst positions can help beginners or career switchers navigate the job market.  
 3. **Portfolio relevance**: Focusing on Data Analyst roles allowed me to generate insights that are directly applicable to career planning and to create analysis that effectively showcases my skills in a portfolio-ready format. 
