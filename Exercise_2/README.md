@@ -1,19 +1,38 @@
 # Introduction
 
-This project is part of my journey to deepen my Python and data analysis skills. I explored a dataset of job postings in 2024 provided by Luke Barousse to uncover trends and insights in the Indian job market. Through this project, I practiced cleaning, analyzing, and visualizing real-world data while learning how to translate findings into meaningful insights.
+This project is part of my journey to grow my skills in **Python** and **data analysis**. Using a 2024 job postings dataset from _Luke Barousse_, I explored trends and insights from the Indian job market. Along the way, I practiced cleaning, analyzing, and visualizing real-world data, while at the same time learned how to turn those findings into clear, meaningful insights.
 
 # Background
 
 The goal of this analysis is to explore the demand for Data Analyst roles in India in 2024. While Data Engineering positions show the highest demand, I chose to focus on Data Analyst roles for several reasons:  
 1. **Learning focus**: This project is primarily about honing data analysis skills, including data cleaning, exploration, and visualization.  
 2. **Actionable insights**: Understanding trends in Data Analyst positions can help beginners or career switchers navigate the job market.  
-3. **Portfolio relevance**: Focusing on Data Analyst roles allows me to generate insights that are directly applicable to career planning and to create analysis that effectively showcases my skills in a portfolio-ready format. 
+3. **Portfolio relevance**: Focusing on Data Analyst roles allows me to generate insights that are directly applicable to career planning and to create analysis that effectively showcases my skills in a portfolio-ready format.
 
 By focusing on Data Analyst roles, I could concentrate on developing strong analytical and Python skills while still providing meaningful insights about the job market.
 
+# Questions to Analyze
+
+These are the main questions explored in this project:
+
+1. Which data-related job roles are most in demand across the top countries in 2024, and how does their popularity vary by country?
+2. What do the 2024 hiring trends reveal about the most sought-after data roles in India?
+3. Which data roles in India are most likely to provide remote work options in 2024, and how does this vary across data roles?
+4. Which skills are driving demand and top salaries for Data Analysts in India in 2024?
+5. What skill combinations are most in demand for data analysts in India in 2024?
+
 # Tools Used
 
-I used Python along with essential libraries such as Pandas for data manipulation, and Matplotlib and Seaborn for data visualization. The project was developed in Visual Studio Code, which provided a robust environment for coding, testing, and visualizing results efficiently. This combination of tools allowed me to explore the dataset and generate professional, clear visualizations.
+To gain insights into the data analyst job market, I worked with a range of tools and technologies that supported every stage of the project:
+
+- **Python**: Served as the foundation of my analysis, helping me process data and uncover key insights. To extend its capabilities, I incorporated several powerful libraries:
+    - **Pandas**: Used for cleaning, transforming, and structuring the dataset efficiently.
+    - **Matplotlib**: Helped me build clear, data-driven visualizations.
+    - **Seaborn**: Enhanced my charts with refined and professional visuals.
+- **Jupyter Notebook**: Provided an interactive space to experiment with code, document findings, and combine visuals with analysis.
+- **Visual Studio Code**: Offered a reliable and organized environment for writing and testing scripts.
+
+# Data Preparation and Cleanup
 
 # The Analysis
 
