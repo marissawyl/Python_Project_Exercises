@@ -34,6 +34,23 @@ To gain insights into the data analyst job market, I worked with a range of tool
 
 # Data Preparation and Cleanup
 
+To start the project, I imported the necessary libraries and loaded the dataset into Python. After loading, I performed data cleanup to prepare the dataset for analysis and visualization.
+
+```python
+# Importing Libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import ast
+
+# Loading Data
+df = pd.read_csv(r'D:\Learn Python for Data Analysis\PYTHON_EXERCISES_LUKE\job_postings_flat_from_luke.csv')
+
+# Data Cleanup
+df['job_posted_date'] = pd.to_datetime(df['job_posted_date'])
+df['job_skills'] = df['job_skills'].apply(lambda skills: ast.literal_eval(skills) if pd.notna(skills) else skills)
+```
+
 # The Analysis
 
 ## 1. Which data-related job roles are most in demand across the top countries in 2024, and how does their popularity vary by country?
