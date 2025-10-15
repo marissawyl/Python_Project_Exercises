@@ -34,7 +34,7 @@ To gain insights into the data analyst job market, I worked with a range of tool
 
 Before beginning the analysis, I prepared each dataset to ensure it was ready for exploration and visualization. Depending on the data source, the preparation steps involved either loading a single CSV file or combining multiple files into one unified dataset.
 
-## Accessing and Loading a Single File
+### Accessing and Loading a Single File
 
 For datasets available as a single CSV file, I simply accessed and loaded the data into a Pandas DataFrame for further processing.
 
@@ -53,6 +53,41 @@ df = pd.read_csv(r'D:\Data Analyst stuffs\Python stuffs\Learn Python for Data An
 # Data Cleanup
 df['Pickup_date'] = pd.to_datetime(df['Pickup_date'])
 df = df.drop_duplicates()
+```
+
+### Accessing and Combining Multiple Files
+
+Some datasets were split across several CSV files. In those cases, I loaded each file and concatenated them into a single DataFrame to make the analysis more efficient and consistent.
+
+```python
+# Importing Libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import os
+
+# === Accessing and Combining Multiple CSV Files ===
+
+# List all dataset files in the folder
+files = os.listdir(r'D:\Data Analyst stuffs\Python stuffs\Learn Python for Data Analysis\PYTHON_EXERCISES_UDEMY\Uber Case Study\Datasets')
+
+# Select last 8 files and remove unnecessary ones
+data_set = files[-8:]
+files_to_remove = ['uber-raw-data-janjune-15.csv', 'uber-raw-data-janjune-15_sample.csv']
+data_set = [f for f in data_set if f not in files_to_remove]
+
+# Initialize an empty DataFrame to store all data
+df_final = pd.DataFrame()
+path = r'D:\Data Analyst stuffs\Python stuffs\Learn Python for Data Analysis\PYTHON_EXERCISES_UDEMY\Uber Case Study\Datasets'
+
+# Load and combine all datasets into a single DataFrame
+for file in data_set:
+    current_df = pd.read_csv(path + '/' + file)
+    df_final = pd.concat([current_df, df_final])
+
+# Data Cleanup
+df_final.drop_duplicates(inplace=True)
+df_final['Date/Time'] = pd.to_datetime(df_final['Date/Time'])
 ```
 
 # The Analysis
