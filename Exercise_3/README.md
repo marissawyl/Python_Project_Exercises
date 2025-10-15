@@ -1,8 +1,6 @@
 # Introduction
 
-This project continues my learning journey to strengthen my **Python** and **data analysis** skills. Building on insights from my previous exploration of the 2024 job market dataset, this exercise focuses on a new dataset: Uber trip data from New York City (2014–2015), originally shared by _Shan Singh_ on Udemy. 
-
-Through this project, I practiced data wrangling, exploratory analysis, and visualization to uncover travel patterns and gain a deeper understanding of how to work with real-world datasets.
+This project continues my learning journey to strengthen my **Python** and **data analysis** skills. Building on insights from my previous exploration of the 2024 job market dataset, this exercise focuses on a new dataset: Uber trip data from New York City (2014–2015), originally shared by _Shan Singh_ on Udemy. Through this project, I practiced data wrangling, exploratory analysis, and visualization to uncover travel patterns and gain a deeper understanding of how to work with real-world datasets.
 
 If you’re interested in seeing the earlier part of this Python learning series, where I analyzed job market trends in India, feel free to check out my [Exercise 2](https://github.com/marissawyl/Python_Project_Exercises/tree/main/Exercise_2) ~
 
