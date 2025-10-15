@@ -37,7 +37,7 @@ I chose Plotly because I wanted to experiment with interactive charts. It allowe
 
 To start the project, I imported the necessary libraries and loaded the dataset into Python. After loading, I performed data cleanup to prepare the dataset for analysis and visualization.
 
-```
+```python
 # Importing Libraries
 import pandas as pd
 import plotly.graph_objects as go
