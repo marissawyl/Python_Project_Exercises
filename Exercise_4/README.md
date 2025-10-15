@@ -33,6 +33,10 @@ To gain insights into the data analyst job market, I worked with a range of tool
 
 I chose Plotly because I wanted to experiment with interactive charts. It allowed me to explore data dynamically, such as zooming, hovering, and comparing points, which made spotting trends and anomalies a lot easier. It was also a great chance to practice building visuals that feel more engaging and insightful.
 
+# Data Preparation and Cleanup
+
+
+
 # The Analysis
 
 ## 1. What patterns emerge from price movements between 2013 and 2017, with a focus on July 2017?
