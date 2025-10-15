@@ -10,13 +10,29 @@ If you’re interested in seeing the earlier part of this Python learning series
 
 Ride-hailing platforms like Uber generate a large amount of data every day. Analyzing such data can provide valuable information about passenger demand, peak hours, and how driver supply responds to that demand. In this project, I focused on understanding when and where demand is highest, identifying rush hour patterns across weekdays and months, and comparing the relationship between active vehicles and completed trips. Beyond being a technical practice, this project also demonstrates how Python can be applied to real-life scenarios.
 
+# Questions to Analyze
+
+These are the main questions explored in this project:
+
+1. How does ride demand change over months and between weekdays and weekends?
+2. What are the peak demand hours for Uber rides in NYC, and how do they vary across weekdays and weekends?
+3. Does the relationship between time of day and month reveal shifting travel behaviors in New York City’s Uber demand?
+4. Can the relationship between driver supply and trip demand reveal how efficiently Uber balanced the two across its New York City bases?
+
 # Tools Used
 
-The analysis was carried out in Visual Studio Code using Jupyter Notebook. Python was the main language for the project, supported by several libraries for data analysis and visualization. Pandas was used for data cleaning and transformation, NumPy for numerical operations, and Matplotlib together with Seaborn for creating visualizations.
+To gain insights into the data analyst job market, I worked with a range of tools and technologies that supported every stage of the project:
+- **Python**: Served as the foundation of my analysis, helping me process data and uncover key insights. To extend its capabilities, I incorporated several powerful libraries:
+    - **Pandas**: Used for cleaning, transforming, and structuring the dataset efficiently.
+    - **NumPy**: Used for numerical operations such as computing linear regression (slope and intercept) and ensuring consistent scaling across visualizations.
+    - **Matplotlib**: Helped me build clear, data-driven visualizations.
+    - **Seaborn**: Enhanced my charts with refined and professional visuals.
+- **Jupyter Notebook**: Provided an interactive space to experiment with code, document findings, and combine visuals with analysis.
+- **Visual Studio Code**: Offered a reliable and organized environment for writing and testing scripts.
 
 # The Analysis
 
-## 1. How does ride demand shift across months, and do weekdays show any clear differences in pickup volume?
+## 1. How does ride demand change over months and between weekdays and weekends?
 
 To answer this, I compared ride demand across months and broke it down by day of the week. By visualizing monthly trends alongside weekday patterns, I could see both overall growth and the weekly distribution of activity. This helped me identify not only when demand peaked, but also which days consistently drove higher volumes.
 
@@ -126,7 +142,7 @@ plt.show()
 - On weekdays, there is a sharp rise in pickups during morning hours (7–9 AM) that aligns with commuting times, followed by another peak in the late afternoon and evening (5–8 PM). This reflects typical work-related travel behavior.
 - Weekends show a different pattern: demand continues to rise steadily throughout the day, reaching the highest levels late at night, especially on Friday and Saturday. This suggests that social and leisure activities drive late-night demand compared to weekday commuting peaks.
 
-## 3. Does the relationship between time of day and month reveal shifting travel behaviors in New York City’s Uber demand? What signals can these patterns offer for operational or business decisions?
+## 3. Does the relationship between time of day and month reveal shifting travel behaviors in New York City’s Uber demand?
 
 To uncover this, I mapped Uber pickup data from April to September 2014 into a heatmap that combines two critical dimensions: hours of the day and months of the year. This heatmap highlights not just daily rush hour peaks, but also how those peaks shift over time. By layering the hourly and monthly dimensions, the visualization makes it easier to spot behavioral changes in ride demand and the potential operational challenges or opportunities they create.
 
