@@ -35,7 +35,24 @@ I chose Plotly because I wanted to experiment with interactive charts. It allowe
 
 # Data Preparation and Cleanup
 
+To start the project, I imported the necessary libraries and loaded the dataset into Python. After loading, I performed data cleanup to prepare the dataset for analysis and visualization.
 
+```
+# Importing Libraries
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
+from plotly.subplots import make_subplots
+
+# Loading Data
+df = pd.read_csv(r'D:\Data Analyst stuffs\Python stuffs\Learn Python for Data Analysis\PYTHON_EXERCISES_UDEMY\Bitcoin Case Study\bitcoin_price_Training - Training.csv')
+
+# Convert the datetime from str to datetime
+df['Date'] = pd.to_datetime(df['Date'])
+
+# Set 'Date' as index
+df = df.set_index('Date').sort_index()
+```
 
 # The Analysis
 
