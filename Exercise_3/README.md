@@ -4,7 +4,7 @@ This project continues my learning journey to strengthen my **Python** and **dat
 
 Through this project, I practiced data wrangling, exploratory analysis, and visualization to uncover travel patterns and gain a deeper understanding of how to work with real-world datasets.
 
-If you’re interested in seeing the earlier part of this Python learning series, where I analyzed job market trends in India, feel free to check out Exercise 2 [here](https://github.com/marissawyl/Python_Project_Exercises/tree/main/Exercise_2)!
+If you’re interested in seeing the earlier part of this Python learning series, where I analyzed job market trends in India, feel free to check out my [Exercise 2](https://github.com/marissawyl/Python_Project_Exercises/tree/main/Exercise_2)!
 
 # Background
 
