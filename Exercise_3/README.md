@@ -30,6 +30,31 @@ To gain insights into the data analyst job market, I worked with a range of tool
 - **Jupyter Notebook**: Provided an interactive space to experiment with code, document findings, and combine visuals with analysis.
 - **Visual Studio Code**: Offered a reliable and organized environment for writing and testing scripts.
 
+# Data Preparation and Cleanup
+
+Before beginning the analysis, I prepared each dataset to ensure it was ready for exploration and visualization. Depending on the data source, the preparation steps involved either loading a single CSV file or combining multiple files into one unified dataset.
+
+## Accessing and Loading a Single File
+
+For datasets available as a single CSV file, I simply accessed and loaded the data into a Pandas DataFrame for further processing.
+
+```python
+# Importing Libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+from adjustText import adjust_text
+import matplotlib.lines as mlines
+
+# Loading Data
+df = pd.read_csv(r'D:\Data Analyst stuffs\Python stuffs\Learn Python for Data Analysis\PYTHON_EXERCISES_UDEMY\Uber Case Study\Datasets\uber-raw-data-janjune-15_sample.csv')
+
+# Data Cleanup
+df['Pickup_date'] = pd.to_datetime(df['Pickup_date'])
+df = df.drop_duplicates()
+```
+
 # The Analysis
 
 ## 1. How does ride demand change over months and between weekdays and weekends?
