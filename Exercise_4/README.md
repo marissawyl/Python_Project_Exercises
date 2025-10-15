@@ -1,6 +1,39 @@
+# Introduction
+
+This project wraps up my four-part data analysis learning series. Like the earlier ones, it continues my hands-on practice with Python: exploring, cleaning, and visualizing real-world datasets to tell stories through data. Continuing from my previous projects — especially Exercise 3, which explored Uber trip data from New York City — this time I turned my attention to Bitcoin’s market movement. The dataset used here contains Bitcoin’s historical prices from 2013 to July 2017, originally shared by _Shan Singh_ on Udemy. Through this project, I wanted to look closer at how Bitcoin’s price evolved during its early years before entering the global spotlight in late 2017.
+
+If you’d like to see the previous project in this series, feel free to check out my [Exercise 3](https://github.com/marissawyl/Python_Project_Exercises/tree/main/Exercise_3).
+
+# Background
+
+Bitcoin’s early years were full of fast growth, big price swings, and growing global interest. From 2013 to mid-2017, its price showed how a small digital idea started turning into something the world began to notice.
+
+In this project, I explored how Bitcoin’s price changed during that time — looking at both the long-term trend and short-term ups and downs. The visualizations highlight key parts of its market behavior: overall growth, daily returns, the link between price and trading volume, and one detailed look at 2016. The results show how Bitcoin’s market evolved during its early phase, offering a data-driven view of its growth and fluctuations.
+
+# Questions to Analyze
+
+1. What patterns emerge from price movements between 2013 and 2017, with a focus on July 2017?
+2. What can Bitcoin’s daily returns from 2013 to 2017 tell us about how its volatility evolved during its early growth years?
+3. Does higher Bitcoin trading volume tend to move hand in hand with stronger daily returns?
+4. How did Bitcoin’s price move during 2016 (a year that set the stage before its big boom in 2017)?
+
+# Tools Used
+
+To gain insights into the data analyst job market, I worked with a range of tools and technologies that supported every stage of the project:
+
+- **Python**: Served as the foundation of my analysis, helping me process data and uncover key insights. To extend its capabilities, I incorporated several powerful libraries:
+    - Pandas: Used for cleaning, transforming, and structuring the dataset efficiently.
+    - Plotly: Applied to build interactive charts and explore market trends.
+        - `plotly.express`: helped create quick, high-level visuals.
+        - `plotly.graph_objects`: allowed for more detailed and customizable plots.
+- Jupyter Notebook: Provided an interactive space to experiment with code, document findings, and combine visuals with analysis.
+- Visual Studio Code: Offered a reliable and organized environment for writing and testing scripts.
+
+I chose Plotly because I wanted to experiment with interactive charts. It allowed me to explore data dynamically, such as zooming, hovering, and comparing points, which made spotting trends and anomalies a lot easier. It was also a great chance to practice building visuals that feel more engaging and insightful.
+
 # The Analysis
 
-## 1. How did price trends change from 2013 to 2017, and what patterns can be observed when focusing on July 2017’s market movements?
+## 1. What patterns emerge from price movements between 2013 and 2017, with a focus on July 2017?
 
 To explore this, I visualized historical price data from 2013 to 2017. The upper chart shows quarterly average closing prices, capturing the overall growth pattern, while the candlestick chart below zooms into July 2017 to highlight daily fluctuations. I chose to focus on this month because it follows a sharp rise that began earlier in 2017, making it an interesting point to observe how the market behaved after that strong upward shift.
 
@@ -210,7 +243,7 @@ fig.show()
 - Both correlation coefficients (Pearson = 0.060, Spearman = 0.138) confirm this weak association, which suggesting that Bitcoin’s price swings weren’t primarily driven by short-term changes in trading volume.
 - The slight positive skew hints that on some days, higher volumes coincide with larger returns, but this pattern isn’t consistent enough to indicate a stable correlation.
 
-## 4. How did Bitcoin’s price move during 2016, a year that set the stage before its big boom in 2017?
+## 4. How did Bitcoin’s price move during 2016 (a year that set the stage before its big boom in 2017)?
 
 To explore this, I focused on Bitcoin’s 2016 price data and identified its largest single rally and drawdown within the year. The line chart shows the daily closing prices, with key points marked to highlight both extremes: a sharp 33.4% surge and a 28.6% drop. This simple view helps capture how quickly the market could swing during Bitcoin’s early adoption phase, capturing the tension between optimism and correction in a single year.
 
