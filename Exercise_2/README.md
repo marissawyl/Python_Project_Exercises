@@ -1,6 +1,8 @@
 # Introduction
 
-This project is part of my journey to grow my skills in **Python** and **data analysis**. Using a 2024 job postings dataset from _Luke Barousse_, I explored trends and insights from the Indian job market. Along the way, I practiced cleaning, analyzing, and visualizing real-world data, while at the same time learned how to turn those findings into clear, meaningful insights.
+This project continues my journey to strengthen my **Python** and **data analysis** skills. Building on the foundational concepts and exercises from my first project, it focuses on a 2024 job postings dataset from _Luke Barousse_ to explore trends and insights from the Indian job market. Along the way, I practiced cleaning, analyzing, and visualizing real-world data, while at the same time learned how to turn those findings into clear, meaningful insights.
+
+If you’d like to see the earlier part of this series, where I laid the groundwork for my Python and data analysis skills, feel free to check out 👉 [Exercise 1](https://github.com/marissawyl/Python_Project_Exercises/tree/main/Exercise_1) 
 
 # Background
 
