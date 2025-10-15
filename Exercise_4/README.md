@@ -12,6 +12,8 @@ In this project, I explored how Bitcoin’s price changed during that time — l
 
 # Questions to Analyze
 
+These are the main questions explored in this project:
+
 1. What patterns emerge from price movements between 2013 and 2017, with a focus on July 2017?
 2. What can Bitcoin’s daily returns from 2013 to 2017 tell us about how its volatility evolved during its early growth years?
 3. Does higher Bitcoin trading volume tend to move hand in hand with stronger daily returns?
