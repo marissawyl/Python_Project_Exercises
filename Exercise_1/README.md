@@ -1,3 +1,12 @@
+# Questions to Analyze
+
+These are the main questions explored in this project:
+
+1. What are the most demanded skills for the top 3 most popular data roles?
+2. How are in-demand skills trending for Data Analysts?
+3. How well do jobs and skills pay for Data Analysts?
+4. What are the most optimal skills to learn for Data Analysts?
+
 # The Analysis
 
 ## 1. What are the most demanded skills for the top 3 most popular data roles?
