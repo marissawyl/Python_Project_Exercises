@@ -348,6 +348,6 @@ Through this final project, I deepened my understanding of both technical and an
 
 # Conclusion
 
-This project wrapped up my Python visualization journey by combining everything I had practiced, from data cleaning and transformation to building interactive charts. Working with Bitcoin’s historical price data gave me a deeper look into how data storytelling can uncover patterns behind market behavior, even without advanced financial models. 
-Beyond improving my technical skills, this exercise helped me appreciate the creative side of visualization, which is finding balance between clarity and depth while turning raw data into an understandable story. It also showed how visualization can make something as complex as market volatility easier to interpret, even for a general audience. 
+This project wrapped up my Python visualization journey by combining everything I had practiced, from data cleaning and transformation to building interactive charts. Working with Bitcoin’s historical price data gave me a deeper look into how data storytelling can uncover patterns behind market behavior, even without advanced financial models.  
+Beyond improving my technical skills, this exercise helped me appreciate the creative side of visualization, which is finding balance between clarity and depth while turning raw data into an understandable story. It also showed how visualization can make something as complex as market volatility easier to interpret, even for a general audience.  
 Completing this exercise felt like a full-circle moment. It brought together coding, exploration, and visual communication in a way that reflects how much my analytical thinking has grown since the first project.
