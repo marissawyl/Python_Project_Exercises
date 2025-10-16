@@ -330,3 +330,24 @@ fig.show()
 - The largest rally occurred around mid-2016, with prices surging more than 30% within a short period, signaling renewed investor confidence and momentum in Bitcoin’s growth.
 - Not long after, the market experienced a significant 28.6% drop, underlining how volatile the asset remained even as it gained mainstream attention.
 - Despite both extremes, Bitcoin closed the year near its highs, showing that 2016 marked a turning point toward broader recovery and sustained upward momentum.
+
+# What I Learned
+
+Through this final project, I deepened my understanding of both technical and analytical aspects of data visualization using Python. It was a valuable chance to connect everything I had learned from earlier exercises and apply it to a real financial dataset. Key lessons and skills I developed include:
+- Strengthening my ability to work with real-world time series data: cleaning, transforming, and organizing it for visual analysis.
+- Learning how to use both `plotly.express` for quick visuals and `plotly.graph_objects` for more control and customization.
+- Gaining a deeper understanding of volatility and momentum through data, which is not from finance theory, but by actually visualizing it.
+- Building a better sense of data storytelling flow: connecting multiple charts (trend, volatility, and volume) into a single, coherent analysis that’s easy to follow.
+- Practicing visual storytelling: focusing on how to guide viewers through complex trends clearly, without overwhelming them with too much data.
+
+# Challenges I Faced
+
+- This was my first time using Plotly, so I needed time to get used to how it works. Some things that were simple in Matplotlib felt different here, especially when setting up the layout and styling.
+- Getting the charts to show Bitcoin’s sharp price changes clearly was harder than I expected. I had to adjust scales and formats a few times to make the movement look right.
+- Putting the different views together into one smooth story also took some planning, especially to keep everything easy to follow.
+
+# Conclusion
+
+This project wrapped up my Python visualization journey by combining everything I had practiced, from data cleaning and transformation to building interactive charts. Working with Bitcoin’s historical price data gave me a deeper look into how data storytelling can uncover patterns behind market behavior, even without advanced financial models.
+Beyond improving my technical skills, this exercise helped me appreciate the creative side of visualization, which is finding balance between clarity and depth while turning raw data into an understandable story. It also showed how visualization can make something as complex as market volatility easier to interpret, even for a general audience.
+Completing this exercise felt like a full-circle moment. It brought together coding, exploration, and visual communication in a way that reflects how much my analytical thinking has grown since the first project.
