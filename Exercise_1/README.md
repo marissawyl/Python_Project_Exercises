@@ -7,6 +7,23 @@ These are the main questions explored in this project:
 3. How well do jobs and skills pay for Data Analysts?
 4. What are the most optimal skills to learn for Data Analysts?
 
+# Tools Used
+
+To gain insights into the data analyst job market, I worked with a range of tools and technologies that supported every stage of the project:
+
+- **Python**: Served as the foundation of my analysis, helping me process data and uncover key insights. To extend its capabilities, I incorporated several powerful libraries:
+    - **Pandas**: Used for cleaning, transforming, and structuring the dataset efficiently.
+    - **Matplotlib**: Helped me build clear, data-driven visualizations.
+    - **Seaborn**: Enhanced my charts with refined and professional visuals.
+- **Jupyter Notebook**: Provided an interactive space to experiment with code, document findings, and combine visuals with analysis.
+- **Visual Studio Code**: Offered a reliable and organized environment for writing and testing scripts.
+
+# Data Preparation and Cleanup
+
+To start the project, I imported the necessary libraries and loaded the dataset into Python. After loading, I performed data cleanup to prepare the dataset for analysis and visualization.
+
+
+
 # The Analysis
 
 ## 1. What are the most demanded skills for the top 3 most popular data roles?
