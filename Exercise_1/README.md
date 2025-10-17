@@ -1,3 +1,13 @@
+# Introduction
+
+This first project marks the starting point of my Python and data analysis journey. Using the 2023 U.S. job postings dataset from _Luke Barousse_, I explored the data job market to understand how different roles, skills, and salaries connect across the field.
+
+The main goal was to find patterns, such as which skills are most in demand, which tools define each role, and how these factors influence earning potential. Throughout this project, I practiced working with real-world data in Python, learning how to clean, analyze, and visualize it effectively to uncover clear insights.
+
+# Background
+
+The 2023 U.S. job market dataset was chosen because it offers one of the largest and most detailed views of data-related roles available online. The United States has a mature and dynamic analytics industry, making it an ideal place to explore real hiring trends and skill demand patterns. Working with this dataset helped me get used to the scale and complexity of real-world data, while practicing the essential steps of cleaning, organizing, and turning it into visual insights that tell a meaningful story about the data profession today.
+
 # Questions to Analyze
 
 These are the main questions explored in this project:
@@ -22,7 +32,22 @@ To gain insights into the data analyst job market, I worked with a range of tool
 
 To start the project, I imported the necessary libraries and loaded the dataset into Python. After loading, I performed data cleanup to prepare the dataset for analysis and visualization.
 
+```python
+# Importing Libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import ast
+from datasets import load_dataset
 
+# Loading Data
+dataset = load_dataset('lukebarousse/data_jobs')
+df = dataset['train'].to_pandas()
+
+# Data Cleanup
+df['job_posted_date'] = pd.to_datetime(df['job_posted_date'])
+df['job_skills'] = df['job_skills'].apply(lambda skills: ast.literal_eval(skills) if pd.notna(skills) else skills)
+```
 
 # The Analysis
 
