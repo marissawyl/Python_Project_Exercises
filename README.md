@@ -3,7 +3,7 @@
 This repository is part of my personal learning journey to strengthen my skills in Python and data analysis. It includes four end-to-end mini projects, each focusing on a different dataset and analytical objective.  
 Every exercise marks a step in my learning path, showing how I moved from simple data cleaning to working with real datasets, visualizing patterns, and sharing insights in a meaningful way.
 
-## 🔹 Exercise 1: Exploring the 2023 U.S. Data Job Market
+## 🔹 [Exercise 1](https://github.com/marissawyl/Python_Project_Exercises/tree/main/Exercise_1): Exploring the 2023 U.S. Data Job Market
 
 Analyzed job postings from the United States to uncover demand, salary, and skill trends across data roles.  
 Focus: Skill demand, salary comparison, and role-specific insights.  
