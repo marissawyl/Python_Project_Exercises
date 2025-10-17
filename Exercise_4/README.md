@@ -126,15 +126,7 @@ fig.show()
 
 ### Results
 
-```python
-# Display the saved plot as a static image as Plotly interactive charts cannot be rendered directly on GitHub
-
-from IPython.display import Image
-
-Image(
-    filename=r'D:\Data Analyst stuffs\Python stuffs\Learn Python for Data Analysis\PYTHON_EXERCISES_UDEMY\Bitcoin Case Study\Own_Exercises\Closing_Price_Movements_Analysis.png'
-) 
-```
+*Plot displayed as a static image as Plotly interactive charts cannot be rendered directly on GitHub*
 
 ![Closing_Price_Movements_Analysis](https://github.com/marissawyl/Python_Project_Exercises/blob/main/Exercise_4/image/Closing_Price_Movements_Analysis.png)
 
