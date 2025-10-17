@@ -29,7 +29,7 @@ Analyzed Bitcoin’s price history to visualize its growth, volatility, and mark
 
 ## 🧩 Tools and Environment
 
-- Language: Python
-- Core Libraries: Pandas, Matplotlib, Seaborn, Plotly
-- Development: Visual Studio Code, Jupyter Notebook
-- Visualization: Static (Matplotlib, Seaborn) and Interactive (Plotly)
+- **Language:** Python
+- **Core Libraries:** Pandas, Matplotlib, Seaborn, Plotly
+- **Development:** Visual Studio Code, Jupyter Notebook
+- **Visualization:** Static (Matplotlib, Seaborn) and Interactive (Plotly)
