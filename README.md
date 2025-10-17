@@ -7,19 +7,19 @@ Every exercise marks a step in my learning path, showing how I moved from simple
 
 Analyzed job postings from the United States to uncover demand, salary, and skill trends across data roles.  
 Focus: Skill demand, salary comparison, and role-specific insights.  
-Key tools: Python (Pandas, Matplotlib, Seaborn).
+Key tools: Python (Pandas, Matplotlib, Seaborn), Visual Studio Code, Jupyter Notebook.
 
 ## 🔹 Exercise 2: Deep Dive into India’s 2024 Job Market
 
 Expanded the previous analysis using a 2024 dataset from Luke Barousse to explore how demand and pay vary across roles and skills in India.  
 Focus: Skill importance, salary vs. demand analysis, and identifying optimal skill combinations.  
-Key tools: Python (Pandas, Matplotlib, Seaborn).
+Key tools: Python (Pandas, Matplotlib, Seaborn), Visual Studio Code, Jupyter Notebook.
 
 ## 🔹 Exercise 3: Understanding Uber Trip Patterns in NYC (2014–2015)
 
 Shifted focus from job data to transportation analytics using Uber trip data from New York City. Explored temporal and spatial trends to understand travel behavior.  
 Focus: Time-based trends, trip density, and data wrangling.  
-Key tools: Python (Pandas, Matplotlib, Seaborn).
+Key tools: Python (Pandas, Matplotlib, Seaborn), Visual Studio Code, Jupyter Notebook.
 
 ## 🔹 Exercise 4: Bitcoin Price Trends (2013–2017)
 
